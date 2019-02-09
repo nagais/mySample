@@ -7,12 +7,15 @@ import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [
-    AndroidInjectionModule::class,
-    AppModule::class,
-    ActivityModule::class
-])
-interface AppComponent: AndroidInjector<MyApplication> {
+@Component(
+    modules = [
+        AndroidInjectionModule::class,
+        AppModule::class,
+        ActivityModule::class,
+        FragmentModule::class
+    ]
+)
+interface AppComponent : AndroidInjector<MyApplication> {
 
     // AndroidInjector.Builderをそのまま使ってる
     //   @BindsInstanceによってAppクラスを依存解決できるようになってる
