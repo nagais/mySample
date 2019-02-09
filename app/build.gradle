@@ -70,6 +70,8 @@ dependencies {
     // gson
     implementation 'com.google.code.gson:gson:2.8.2'
 
+    // log
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 
 
     testImplementation 'junit:junit:4.12'
