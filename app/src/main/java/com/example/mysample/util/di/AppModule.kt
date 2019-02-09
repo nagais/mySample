@@ -1,7 +1,7 @@
 package com.example.mysample.util.di
 
 import android.content.Context
-import com.example.mysample.MyApplication
+import com.example.mysample.presenter.MyApplication
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

@@ -1,4 +1,4 @@
-package com.example.mysample
+package com.example.mysample.presenter
 
 import android.app.Activity
 import android.app.Application

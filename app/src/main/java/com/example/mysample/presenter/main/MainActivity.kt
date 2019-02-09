@@ -1,8 +1,9 @@
-package com.example.mysample
+package com.example.mysample.presenter.main
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mysample.R
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
