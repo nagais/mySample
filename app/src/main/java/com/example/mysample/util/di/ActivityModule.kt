@@ -1,6 +1,6 @@
 package com.example.mysample.util.di
 
-import com.example.mysample.presenter.main.MainActivity
+import com.example.mysample.presentation.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
