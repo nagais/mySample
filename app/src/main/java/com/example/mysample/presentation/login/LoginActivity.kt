@@ -1,4 +1,4 @@
-package com.example.mysample.presentation.main
+package com.example.mysample.presentation.login
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import com.example.mysample.R
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     @Inject
     lateinit var context: Context

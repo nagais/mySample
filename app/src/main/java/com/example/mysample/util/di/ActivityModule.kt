@@ -1,6 +1,6 @@
 package com.example.mysample.util.di
 
-import com.example.mysample.presentation.main.MainActivity
+import com.example.mysample.presentation.login.LoginActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -8,5 +8,5 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeMainActivity(): MainActivity
+    abstract fun contributeLoginActivity(): LoginActivity
 }
