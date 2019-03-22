@@ -1,22 +1,23 @@
 package com.example.mysample.presentation.login
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.example.mysample.R
+import com.example.mysample.databinding.ActivityLoginBinding
 import dagger.android.AndroidInjection
-import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var context: Context
+    val binding: ActivityLoginBinding by lazy {
+        DataBindingUtil.setContentView<ActivityLoginBinding>(this, R.layout.activity_login)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         AndroidInjection.inject(this)
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
     }
 }
