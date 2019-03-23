@@ -33,7 +33,7 @@ class LoginCompleteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val uri = Uri.parse(intent.dataString)
-        val code = uri.getQueryParameter(CODE_KEY)
+        val code = uri.getQueryParameter(CODE_KEY) ?: ""
         encPreferences.save(CODE_KEY, code)
         viewModel.start()
     }
