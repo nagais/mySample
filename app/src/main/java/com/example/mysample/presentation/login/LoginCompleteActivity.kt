@@ -13,7 +13,7 @@ import javax.inject.Inject
 class LoginCompleteActivity : AppCompatActivity() {
 
     companion object {
-        private const val CODE_KEY = "code"
+        const val CODE_KEY = "code"
     }
 
     val binding: ActivityLoginCompleteBinding by lazy {
