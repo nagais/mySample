@@ -18,11 +18,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         def properties = new Properties()
-        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        properties.load(project.rootProject.file('gradle.properties').newDataInputStream())
         def qiitaClientId = properties.getProperty("qiita_client_id")
         def qiitaClientSecret = properties.getProperty("qiita_client_secret")
+        def secretKey = properties.getProperty("secret_key")
         buildConfigField("String", "QIITA_CLIENT_ID", "\"${qiitaClientId}\"")
         buildConfigField("String", "QIITA_CLIENT_SECRET", "\"${qiitaClientSecret}\"")
+        buildConfigField("String", "SECRET_KEY", "\"${secretKey}\"")
     }
     buildTypes {
         release {

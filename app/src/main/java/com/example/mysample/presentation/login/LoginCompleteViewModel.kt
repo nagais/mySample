@@ -6,7 +6,7 @@ class LoginCompleteViewModel @Inject constructor() {
 
     private var code: String = ""
 
-    fun start(code: String) {
+    fun start() {
 
     }
 }

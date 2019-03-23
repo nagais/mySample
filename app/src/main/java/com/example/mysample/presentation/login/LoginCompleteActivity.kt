@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.mysample.R
+import com.example.mysample.data.EncryptSharedPreferences
 import com.example.mysample.databinding.ActivityLoginCompleteBinding
 import dagger.android.AndroidInjection
 import javax.inject.Inject
@@ -22,6 +23,9 @@ class LoginCompleteActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModel: LoginCompleteViewModel
 
+    @Inject
+    lateinit var encPreferences: EncryptSharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         AndroidInjection.inject(this)
@@ -30,6 +34,7 @@ class LoginCompleteActivity : AppCompatActivity() {
 
         val uri = Uri.parse(intent.dataString)
         val code = uri.getQueryParameter(CODE_KEY)
-        viewModel.start(code)
+        encPreferences.save(CODE_KEY, code)
+        viewModel.start()
     }
 }

@@ -1,6 +1,8 @@
 package com.example.mysample.util.di
 
 import android.content.Context
+import android.preference.PreferenceManager
+import com.example.mysample.data.EncryptSharedPreferences
 import com.example.mysample.data.api.QiitaApi
 import com.example.mysample.presentation.MyApplication
 import com.example.mysample.util.env.EnvConfig
@@ -15,6 +17,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
+
 
 @Module
 class AppModule {
@@ -32,6 +35,13 @@ class AppModule {
         return Moshi.Builder()
             .add(AppJsonAdapterFactory.INSTANCE)
             .build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideEncryptSharedPreferences(context: Context): EncryptSharedPreferences {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return EncryptSharedPreferences(preferences)
     }
 
     @Provides
