@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.mysample.R
 import com.example.mysample.databinding.ActivityLoginCompleteBinding
 import dagger.android.AndroidInjection
+import javax.inject.Inject
 
 class LoginCompleteActivity : AppCompatActivity() {
 
@@ -18,6 +19,9 @@ class LoginCompleteActivity : AppCompatActivity() {
         DataBindingUtil.setContentView<ActivityLoginCompleteBinding>(this, R.layout.activity_login_complete)
     }
 
+    @Inject
+    lateinit var viewModel: LoginCompleteViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         AndroidInjection.inject(this)
@@ -26,5 +30,6 @@ class LoginCompleteActivity : AppCompatActivity() {
 
         val uri = Uri.parse(intent.dataString)
         val code = uri.getQueryParameter(CODE_KEY)
+        viewModel.start(code)
     }
 }
