@@ -10,3 +10,5 @@
 
 # Syncing captures from Android Studio is usually not required.
 /captures
+
+local.properties

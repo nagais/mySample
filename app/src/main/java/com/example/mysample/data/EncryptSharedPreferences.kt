@@ -6,7 +6,7 @@ import com.example.mysample.util.crypt.CryptUtil
 import javax.inject.Inject
 
 
-class EncryptSharedPreferences @Inject constructor(private val sharedPreferences: SharedPreferences) {
+class EncryptSharedPreferences constructor(private val sharedPreferences: SharedPreferences) {
 
     fun save(key: String, data: String) {
         val encKey = CryptUtil.encrypt(key, BuildConfig.SECRET_KEY)

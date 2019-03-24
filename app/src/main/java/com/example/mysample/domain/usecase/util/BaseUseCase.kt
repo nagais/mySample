@@ -14,8 +14,8 @@ abstract class BaseUseCase<in PARAM, RESPONSE> {
 
     fun execute(param: PARAM): Single<RESPONSE> {
         return buildUseCaseSingle(param)
-            .subscribeOn(AndroidSchedulers.mainThread())
-            .observeOn(Schedulers.io())
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { dispose -> compositeDisposable.add(dispose) }
     }
 

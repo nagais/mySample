@@ -35,6 +35,11 @@ android {
     dataBinding {
         enabled = true
     }
+    kapt {
+        javacOptions {
+            option("-Xmaxerrs", 5000)
+        }
+    }
 }
 
 dependencies {

@@ -12,7 +12,7 @@ import javax.inject.Singleton
         AndroidInjectionModule::class,
         AppModule::class,
         ActivityModule::class,
-        FragmentModule::class
+        RepositoryModule::class
     ]
 )
 interface AppComponent : AndroidInjector<MyApplication> {
@@ -21,5 +21,7 @@ interface AppComponent : AndroidInjector<MyApplication> {
     //   @BindsInstanceによってAppクラスを依存解決できるようになってる
     //   createメソッドが定義されている
     @Component.Builder
-    abstract class Builder : AndroidInjector.Builder<MyApplication>()
+    abstract class Builder : AndroidInjector.Builder<MyApplication>() {
+        abstract fun appModule(appModule: AppModule): Builder
+    }
 }
