@@ -2,16 +2,16 @@ package com.example.mysample.presentation.login
 
 import android.net.Uri
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.mysample.R
 import com.example.mysample.data.EncryptSharedPreferences
 import com.example.mysample.databinding.ActivityLoginCompleteBinding
+import com.example.mysample.presentation.util.BaseActivity
 import com.example.mysample.util.crypt.EncodeKeyList
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
-class LoginCompleteActivity : AppCompatActivity() {
+class LoginCompleteActivity : BaseActivity() {
 
     val binding: ActivityLoginCompleteBinding by lazy {
         DataBindingUtil.setContentView<ActivityLoginCompleteBinding>(this, R.layout.activity_login_complete)
@@ -25,6 +25,7 @@ class LoginCompleteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
+        setNowActivity(this)
 
         super.onCreate(savedInstanceState)
 

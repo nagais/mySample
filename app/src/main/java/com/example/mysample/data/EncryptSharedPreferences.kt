@@ -17,13 +17,13 @@ class EncryptSharedPreferences constructor(private val sharedPreferences: Shared
             .apply()
     }
 
-    fun get(key: String): String {
+    fun get(key: String): String? {
         val encKey = CryptUtil.encrypt(key, BuildConfig.SECRET_KEY)
-        val loadData = sharedPreferences.getString(encKey, "")
+        val loadData = sharedPreferences.getString(encKey, null)
         loadData?.apply {
             return CryptUtil.decrypt(loadData, BuildConfig.SECRET_KEY)
         }
-        return ""
+        return null
     }
 
     fun delete(key: String) {

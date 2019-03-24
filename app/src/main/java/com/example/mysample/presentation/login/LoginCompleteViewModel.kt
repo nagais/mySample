@@ -6,6 +6,7 @@ import com.example.mysample.data.EncryptSharedPreferences
 import com.example.mysample.data.repository.qiita.AccessTokenQueryParameter
 import com.example.mysample.domain.usecase.QiitaAccessTokenUseCase
 import com.example.mysample.util.crypt.EncodeKeyList
+import com.example.mysample.util.helper.Navigator
 import javax.inject.Inject
 
 class LoginCompleteViewModel @Inject constructor(
@@ -26,6 +27,7 @@ class LoginCompleteViewModel @Inject constructor(
             .subscribe(
                 { response ->
                     preferences.save(EncodeKeyList.KEY_QIITA_TOKEN, response.token)
+                    Navigator.navigateTopActivity()
                 },
                 { error ->
                     println(error.message)
