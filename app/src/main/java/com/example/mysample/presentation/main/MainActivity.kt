@@ -1,9 +1,8 @@
 package com.example.mysample.presentation.main
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.example.mysample.R
-import com.example.mysample.data.EncryptSharedPreferences
+import com.example.mysample.data.storage.EncryptSharedPreferences
 import com.example.mysample.presentation.util.BaseActivity
 import com.example.mysample.util.crypt.EncodeKeyList
 import com.example.mysample.util.helper.Navigator

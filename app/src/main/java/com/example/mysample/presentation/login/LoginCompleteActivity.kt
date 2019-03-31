@@ -4,7 +4,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.mysample.R
-import com.example.mysample.data.EncryptSharedPreferences
+import com.example.mysample.data.storage.EncryptSharedPreferences
 import com.example.mysample.databinding.ActivityLoginCompleteBinding
 import com.example.mysample.presentation.util.BaseActivity
 import com.example.mysample.util.crypt.EncodeKeyList

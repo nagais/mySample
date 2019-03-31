@@ -1,9 +1,8 @@
-package com.example.mysample.data
+package com.example.mysample.data.storage
 
 import android.content.SharedPreferences
 import com.example.mysample.BuildConfig
 import com.example.mysample.util.crypt.CryptUtil
-import javax.inject.Inject
 
 
 class EncryptSharedPreferences constructor(private val sharedPreferences: SharedPreferences) {
