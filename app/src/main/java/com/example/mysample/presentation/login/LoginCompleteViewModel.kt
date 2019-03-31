@@ -24,13 +24,14 @@ class LoginCompleteViewModel @Inject constructor(
         val param = QiitaAccessTokenUseCase.Parameter(queryParam)
 
         useCase.execute(param)
-            .subscribe(
-                { response ->
-                    preferences.save(EncodeKeyList.KEY_QIITA_TOKEN, response.token)
+            .apply {
+                completeListener = { data ->
+                    preferences.save(EncodeKeyList.KEY_QIITA_TOKEN, data.token)
                     Navigator.navigateTopActivity()
-                },
-                { error ->
-                    println(error.message)
-                })
+                }
+                doOnError = {
+                    println(it.message)
+                }
+            }
     }
 }
