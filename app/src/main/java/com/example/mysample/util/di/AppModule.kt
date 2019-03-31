@@ -2,7 +2,7 @@ package com.example.mysample.util.di
 
 import android.content.Context
 import android.preference.PreferenceManager
-import com.example.mysample.data.EncryptSharedPreferences
+import com.example.mysample.data.storage.EncryptSharedPreferences
 import com.example.mysample.data.api.QiitaApi
 import com.example.mysample.presentation.MyApplication
 import com.example.mysample.util.env.EnvConfig
