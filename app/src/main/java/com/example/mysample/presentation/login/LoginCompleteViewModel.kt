@@ -3,6 +3,7 @@ package com.example.mysample.presentation.login
 import android.annotation.SuppressLint
 import com.example.mysample.BuildConfig
 import com.example.mysample.data.EncryptSharedPreferences
+import com.example.mysample.data.mapper.AccessTokenMapper
 import com.example.mysample.data.repository.qiita.AccessTokenQueryParameter
 import com.example.mysample.data.repository.qiita.entity.AccessTokenAggregate
 import com.example.mysample.domain.usecase.QiitaAccessTokenUseCase
@@ -26,8 +27,9 @@ class LoginCompleteViewModel @Inject constructor(
         val param = QiitaAccessTokenUseCase.Parameter(queryParam)
 
         useCase.execute(object : DisposableSingleObserver<AccessTokenAggregate>() {
-            override fun onSuccess(t: AccessTokenAggregate) {
-                preferences.save(EncodeKeyList.KEY_QIITA_TOKEN, t.token)
+            override fun onSuccess(entity: AccessTokenAggregate) {
+                val model = AccessTokenMapper.translate(entity)
+                preferences.save(EncodeKeyList.KEY_QIITA_TOKEN, model.token)
                 Navigator.navigateTopActivity()
             }
 
