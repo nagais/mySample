@@ -1,45 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/design_default_color_on_secondary"
-    tools:context=".presentation.top.TopActivity">
-
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_centerInParent="true"
-        android:src="@mipmap/ic_launcher" />
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="4dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/design_default_color_on_secondary"
+            tools:context=".presentation.top.TopActivity">
 
-        <View
-            android:id="@+id/block"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorPrimary"
-            android:rotation="45" />
+        <ImageView
+                android:id="@+id/image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_launcher"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/block"
-            android:layout_marginTop="-8dp"
-            android:background="@color/colorPrimary"
-            android:padding="8dp"
-            android:text="Login済み"
-            android:textColor="@color/design_default_color_on_primary"
-            android:textSize="24sp" />
+        <RelativeLayout
+                android:id="@+id/speaker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp">
+
+            <View
+                    android:id="@+id/block"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/design_default_color_primary_dark"
+                    android:rotation="45"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/block"
+                    android:background="@color/design_default_color_primary_dark"
+                    android:layout_marginTop="-8dp"
+                    android:padding="8dp"
+                    android:text="Login済み"
+                    android:textColor="@color/design_default_color_on_primary"
+                    android:textSize="24sp"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
-</RelativeLayout>
+</layout>
