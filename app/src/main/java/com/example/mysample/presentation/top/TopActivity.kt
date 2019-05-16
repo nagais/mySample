@@ -3,7 +3,9 @@ package com.example.mysample.presentation.top
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import com.example.mysample.R
+import com.example.mysample.databinding.ActivityTopBinding
 import com.example.mysample.presentation.util.BaseActivity
 import dagger.android.AndroidInjection
 
@@ -16,8 +18,11 @@ class TopActivity : BaseActivity() {
             val intent = Intent(context, TopActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
             return intent
-
         }
+    }
+
+    val binding: ActivityTopBinding by lazy {
+        DataBindingUtil.setContentView<ActivityTopBinding>(this, R.layout.activity_top)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
