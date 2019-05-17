@@ -4,6 +4,7 @@ import android.animation.AnimatorInflater
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import com.example.mysample.R
 import com.example.mysample.databinding.ActivityTopBinding
@@ -39,5 +40,10 @@ class TopActivity : BaseActivity() {
         val animatorSet = AnimatorInflater.loadAnimator(this, R.animator.repeat)
         animatorSet.setTarget(binding.root.speaker)
         animatorSet.start()
+
+        val animatorSet2 = AnimatorInflater.loadAnimator(this, R.animator.scale)
+        animatorSet2.setTarget(binding.scaleView)
+        animatorSet2.start()
+
     }
 }

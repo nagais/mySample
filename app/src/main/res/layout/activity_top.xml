@@ -6,7 +6,38 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/design_default_color_on_secondary"
+            android:clipChildren="false"
+            android:clipToPadding="false"
             tools:context=".presentation.top.TopActivity">
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_above="@+id/image"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/text_view"
+                    android:layout_width="wrap_content"
+                    android:text="@string/app_name"
+                    android:background="@color/design_default_color_on_primary"
+                    android:layout_centerInParent="true"
+                    android:padding="16dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_height="wrap_content"/>
+
+            <View
+                    android:id="@+id/scale_view"
+                    android:layout_alignBottom="@+id/text_view"
+                    android:layout_alignStart="@+id/text_view"
+                    android:layout_centerInParent="true"
+                    android:layout_alignEnd="@+id/text_view"
+                    android:layout_alignTop="@+id/text_view"
+                    android:background="@drawable/shape_stroke_background_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </RelativeLayout>
 
         <ImageView
                 android:id="@+id/image"
