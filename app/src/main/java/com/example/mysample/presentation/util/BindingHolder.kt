@@ -17,12 +17,8 @@ class BindingHolder<T : ViewDataBinding>(parent: ViewGroup, @LayoutRes resId: In
         ).root
     ) {
 
-    val binding: T?
+    val binding: T? = DataBindingUtil.bind(itemView)
 
-    init {
-        binding = DataBindingUtil.bind(itemView)
-
-    }
 }
 
 
