@@ -37,6 +37,8 @@ class TopActivity : BaseActivity() {
 
         initRecyclerView()
 
+        viewModel.load()
+
     }
 
     private fun initRecyclerView() {
